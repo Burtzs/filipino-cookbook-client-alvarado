@@ -25,6 +25,26 @@ This client application provides a user-friendly interface for browsing, searchi
 - JavaScript (vanilla ES6+, Fetch API)
 - Google Fonts (Inter)
 
+## Screenshots of the User Interface
+
+*Home Page — Stats and featured dishes:*
+![Home](ui%20screenshots/Home.png)
+
+*All Foods — Browsing dishes with search and category filter:*
+![All Foods](ui%20screenshots/All%20%20Foods.png)
+
+*Food Detail Modal — Viewing full recipe details:*
+![Food detail modal](ui%20screenshots/Food%20detail%20modal.png)
+
+*Categories — Browse dishes by category:*
+![Categories](ui%20screenshots/Categories.png)
+
+*Ingredients — All ingredients used across Filipino dishes:*
+![Ingredients](ui%20screenshots/Ingredients.png)
+
+*Settings — API connection configuration:*
+![Settings](ui%20screenshots/Settings.png)
+
 ## Classmate's API Information
 
 | Property | Details |
