@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filipino Cookbook — Client Application</title>
+    <meta name="description" content="A client web application that consumes the Filipino Cookbook API by John Vhinson Fontanos to browse, search, and explore traditional Filipino dishes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== Sidebar Navigation ===== -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">🍲</span>
+            <h1 class="sidebar-title">Filipino<br>Cookbook</h1>
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="nav-link active" data-section="home" id="nav-home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-section="foods" id="nav-foods">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    <span>All Foods</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-section="categories" id="nav-categories">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-section="ingredients" id="nav-ingredients">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    <span>Ingredients</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-section="settings" id="nav-settings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="api-credit">
+                <span class="credit-label">API developed by</span>
+                <span class="credit-name">John Vhinson Fontanos</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Mobile Header ===== -->
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <span class="mobile-title">🍲 Filipino Cookbook</span>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main class="main-content">
+
+        <!-- ── Home Section ── -->
+        <section class="section active" id="home-section">
+            <div class="hero">
+                <h2 class="hero-title">Discover Filipino<br><span class="accent">Cuisine</span></h2>
+                <p class="hero-subtitle">Explore traditional dishes, ingredients, and cooking methods from the Philippines.</p>
+            </div>
+
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <span class="stat-icon">🍛</span>
+                    <span class="stat-value" id="statFoods">—</span>
+                    <span class="stat-label">Dishes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📂</span>
+                    <span class="stat-value" id="statCategories">—</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🧄</span>
+                    <span class="stat-value" id="statIngredients">—</span>
+                    <span class="stat-label">Ingredients</span>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h3 class="section-heading">Featured Dishes</h3>
+            </div>
+            <div class="food-grid" id="featuredGrid">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+        </section>
+
+        <!-- ── Foods Section ── -->
+        <section class="section" id="foods-section">
+            <div class="section-header">
+                <h2 class="section-heading">All Dishes</h2>
+            </div>
+
+            <div class="toolbar">
+                <div class="search-box">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search for a dish…" autocomplete="off">
+                    <button class="search-clear hidden" id="searchClear" aria-label="Clear search">&times;</button>
+                </div>
+                <div class="filter-group">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="food-grid" id="foodsGrid"></div>
+            <div class="empty-state hidden" id="foodsEmpty">
+                <span class="empty-icon">🔍</span>
+                <p class="empty-text">No dishes found.</p>
+            </div>
+        </section>
+
+        <!-- ── Categories Section ── -->
+        <section class="section" id="categories-section">
+            <div class="section-header">
+                <h2 class="section-heading">Categories</h2>
+                <p class="section-desc">Browse dishes by category.</p>
+            </div>
+            <div class="categories-grid" id="categoriesGrid"></div>
+        </section>
+
+        <!-- ── Ingredients Section ── -->
+        <section class="section" id="ingredients-section">
+            <div class="section-header">
+                <h2 class="section-heading">Ingredients</h2>
+                <p class="section-desc">All ingredients used across Filipino dishes.</p>
+            </div>
+            <div class="ingredients-search">
+                <input type="text" id="ingredientSearch" class="search-input" placeholder="Filter ingredients…" autocomplete="off">
+            </div>
+            <div class="ingredients-grid" id="ingredientsGrid"></div>
+        </section>
+
+        <!-- ── Settings Section ── -->
+        <section class="section" id="settings-section">
+            <div class="section-header">
+                <h2 class="section-heading">API Settings</h2>
+                <p class="section-desc">Configure the connection to the Filipino Cookbook API.</p>
+            </div>
+
+            <form class="settings-form" id="settingsForm">
+                <div class="form-group">
+                    <label class="form-label" for="apiBaseUrl">API Base URL</label>
+                    <input type="url" id="apiBaseUrl" class="form-input" placeholder="http://localhost/filipino-cookbook-api/public/api" required>
+                    <span class="form-hint">The base URL of the classmate's API (without trailing slash).</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="apiToken">Bearer Token</label>
+                    <input type="password" id="apiToken" class="form-input" placeholder="Enter your API token" required>
+                    <span class="form-hint">The token set in the API's index.php middleware.</span>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="testConnectionBtn">Test Connection</button>
+                    <button type="submit" class="btn btn-primary" id="saveSettingsBtn">Save Settings</button>
+                </div>
+                <div class="connection-status hidden" id="connectionStatus"></div>
+            </form>
+
+            <div class="settings-info">
+                <h4>API Information</h4>
+                <table class="info-table">
+                    <tr><td>API Developer</td><td>John Vhinson Fontanos</td></tr>
+                    <tr><td>GitHub Username</td><td>vhinsonj</td></tr>
+                    <tr><td>Repository</td><td><a href="https://github.com/vhinsonj/filipino-cookbook-api-fontanos" target="_blank" rel="noopener">filipino-cookbook-api-fontanos</a></td></tr>
+                    <tr><td>Authentication</td><td>Bearer Token (role-based)</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- ── Setup Prompt (shown when no token is set) ── -->
+        <div class="setup-prompt hidden" id="setupPrompt">
+            <div class="setup-card">
+                <span class="setup-icon">🔑</span>
+                <h3 class="setup-title">API Connection Required</h3>
+                <p class="setup-text">Configure the API base URL and Bearer token to start browsing Filipino dishes.</p>
+                <button class="btn btn-primary" id="goToSettingsBtn">Open Settings</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== Food Detail Modal ===== -->
+    <div class="modal-overlay hidden" id="foodModal">
+        <div class="modal" role="dialog" aria-labelledby="modalFoodName">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <span class="modal-emoji" id="modalEmoji"></span>
+                <div>
+                    <h2 class="modal-title" id="modalFoodName"></h2>
+                    <div class="modal-meta">
+                        <span class="badge badge-category" id="modalCategory"></span>
+                        <span class="badge badge-origin" id="modalOrigin"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4 class="modal-section-title">Cooking Instructions</h4>
+                    <p class="modal-instructions" id="modalInstructions"></p>
+                </div>
+                <div class="modal-section">
+                    <h4 class="modal-section-title">Ingredients</h4>
+                    <ul class="modal-ingredients" id="modalIngredients"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Toast Container ===== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

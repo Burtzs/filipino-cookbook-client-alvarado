@@ -1,0 +1,13 @@
+# Dependencies
+vendor/
+
+# Environment / config
+.env
+.env.*
+config.php
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
