@@ -1,12 +1,14 @@
 # Filipino Cookbook Client Application
 
-A web-based client application that consumes the **Filipino Cookbook API** created by **John Vhinson Fontanos**. Built with HTML, CSS, and JavaScript as part of the Collaborative API Development and Integration Activity.
+## 1. Application Title
 
-## Application Description
+**Filipino Cookbook Client** — A web-based client application for the Filipino Cookbook API.
 
-This client application provides a user-friendly interface for browsing, searching, and exploring traditional Filipino dishes. It retrieves all data exclusively through the classmate's REST API endpoints — no direct database access is performed.
+## 2. Application Description
 
-### Features
+This client application consumes the **Filipino Cookbook API** created by classmate **John Vhinson Fontanos**. It provides a user-friendly interface for browsing, searching, and exploring traditional Filipino dishes. All data is retrieved exclusively through the classmate's REST API endpoints — no direct database access is performed.
+
+**Major features:**
 
 - Browse all Filipino food dishes with category and origin information
 - Search for dishes by name using the API search endpoint
@@ -18,59 +20,21 @@ This client application provides a user-friendly interface for browsing, searchi
 - Connection testing to verify API availability
 - Responsive design for desktop and mobile devices
 
-## Technologies Used
+**Intended users:** Students and developers who want to explore Filipino food data through a graphical interface.
+
+## 3. Technologies Used
 
 - HTML5
 - CSS3 (vanilla, no frameworks)
 - JavaScript (vanilla ES6+, Fetch API)
 - Google Fonts (Inter)
 
-## Screenshots of the User Interface
-
-*Home Page — Stats and featured dishes:*
-![Home](ui%20screenshots/Home.png)
-
-*All Foods — Browsing dishes with search and category filter:*
-![All Foods](ui%20screenshots/All%20%20Foods.png)
-
-*Food Detail Modal — Viewing full recipe details:*
-![Food detail modal](ui%20screenshots/Food%20detail%20modal.png)
-
-*Categories — Browse dishes by category:*
-![Categories](ui%20screenshots/Categories.png)
-
-*Ingredients — All ingredients used across Filipino dishes:*
-![Ingredients](ui%20screenshots/Ingredients.png)
-
-*Settings — API connection configuration:*
-![Settings](ui%20screenshots/Settings.png)
-
-## Classmate's API Information
-
-| Property | Details |
-|---|---|
-| **API Developer** | John Vhinson Fontanos |
-| **GitHub Username** | vhinsonj |
-| **Repository Name** | filipino-cookbook-api-fontanos |
-| **Repository Link** | https://github.com/vhinsonj/filipino-cookbook-api-fontanos |
-| **Base URL** | `http://localhost/filipino-cookbook-api/public/api` |
-| **Authentication** | Bearer Token (role-based: Admin read/write, User read-only) |
-
-### API Endpoints Used
-
-| Endpoint | Method | Description |
-|---|---|---|
-| `/api/foods` | GET | Retrieve all Filipino foods with categories, origins, and ingredients |
-| `/api/foods/{id}` | GET | Retrieve a specific food by its ID |
-| `/api/foods/search/{name}` | GET | Search for foods by name (partial match) |
-| `/api/categories` | GET | Retrieve all food categories |
-| `/api/ingredients` | GET | Retrieve all ingredients |
-
-## Installation Instructions
+## 4. Installation Instructions
 
 ### Prerequisites
 
 - XAMPP (or any local Apache + PHP + MySQL server)
+- Composer installed globally
 - The classmate's API must be installed and running locally
 
 ### Setup Steps
@@ -103,16 +67,52 @@ This client application provides a user-friendly interface for browsing, searchi
 
 5. **Browse and explore** Filipino dishes!
 
-## API Developer Acknowledgment
+## 5. API Endpoints Used
+
+This application consumes the following endpoints from the classmate's API:
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/foods` | GET | Retrieve all Filipino foods with categories, origins, and ingredients |
+| `/api/foods/{id}` | GET | Retrieve a specific food by its ID |
+| `/api/foods/search/{name}` | GET | Search for foods by name (partial match) |
+| `/api/categories` | GET | Retrieve all food categories |
+| `/api/ingredients` | GET | Retrieve all ingredients |
+
+All endpoints require a valid Bearer token sent via the `Authorization` header.
+
+## 6. Screenshots
+
+*Home Page — Stats and featured dishes:*
+![Home](ui%20screenshots/Home.png)
+
+*All Foods — Browsing dishes with search and category filter:*
+![All Foods](ui%20screenshots/All%20%20Foods.png)
+
+*Food Detail Modal — Viewing full recipe details:*
+![Food detail modal](ui%20screenshots/Food%20detail%20modal.png)
+
+*Categories — Browse dishes by category:*
+![Categories](ui%20screenshots/Categories.png)
+
+*Ingredients — All ingredients used across Filipino dishes:*
+![Ingredients](ui%20screenshots/Ingredients.png)
+
+*Settings — API connection configuration:*
+![Settings](ui%20screenshots/Settings.png)
+
+## 7. API Source and Acknowledgment
 
 ```
-API developed by: John Vhinson Fontanos
+API Source
+
+This client application uses the Filipino Cookbook API developed by:
+
+Developer: John Vhinson Fontanos
+GitHub Repository: https://github.com/vhinsonj/filipino-cookbook-api-fontanos
+
+The API is used for educational purposes with the permission of the developer.
 ```
-
-This client application consumes the Filipino Cookbook API developed by **John Vhinson Fontanos** as part of the Collaborative API Development and Integration Activity.
-
-- **GitHub:** [vhinsonj](https://github.com/vhinsonj)
-- **Repository:** [filipino-cookbook-api-fontanos](https://github.com/vhinsonj/filipino-cookbook-api-fontanos)
 
 ## Client Developer Information
 
